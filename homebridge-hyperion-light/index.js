@@ -35,7 +35,7 @@ HyperionAccessory.prototype.getServices = function() {
         .on('set', (value, callback) => {
             this.log.error("set light", value);
             if (value) {
-                http.get('http://' + this.host + ':' + this.port + '/light', function(res) {
+                http.get('http://' + this.host + ':' + this.port + '/light?command=on', function(res) {
                     var body = '';
 
                     res.on('data', function(chunk) {
@@ -47,7 +47,7 @@ HyperionAccessory.prototype.getServices = function() {
                     });
                 });
             } else {
-                http.get('http://' + this.host + ':' + this.port + '/light', function(res) {
+                http.get('http://' + this.host + ':' + this.port + '/light?command=off', function(res) {
                     var body = '';
 
                     res.on('data', function(chunk) {

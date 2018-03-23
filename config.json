@@ -65,7 +65,8 @@
         "accessory": "Hyperion",
         "name": "Light",
         "type": "light",
-        "ip": "10.0.1.4",
+        "host": "10.0.1.38",
+        "port": "11947",
         "token": "d855f33b358d95808e86563f40839969"
     }]
 }
