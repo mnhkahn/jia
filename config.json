@@ -62,11 +62,9 @@
         "showHumidity": true,
         "showAirQuality": true
     }, {
-        "accessory": "Hyperion",
-        "name": "Light",
-        "type": "light",
+        "accessory": "PinLight",
+        "name": "PinLight",
         "host": "10.0.1.38",
-        "port": "11947",
-        "token": "d855f33b358d95808e86563f40839969"
+        "port": "11947"
     }]
 }
