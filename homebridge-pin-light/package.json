@@ -1,0 +1,29 @@
+{
+    "name": "homebridge-pin-light",
+    "version": "1.1.4",
+    "description": "Homebridge plugin to use Pin as HomeKit accessory. It depends on this repositry https://github.com/mnhkahn/jia.",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mnhkahn/jia.git"
+    },
+    "keywords": [
+        "Homebridge",
+        "HAP-NodeJs",
+        "homebridge-plugin",
+        "pin"
+    ],
+    "engines": {
+        "node": ">=0.12.0",
+        "homebridge": ">=0.2.0"
+    },
+    "main": "index.js",
+    "author": "Bryce Li",
+    "dependencies": {
+        "npm-auto-update": "^1.1.3"
+    },
+    "bugs": {
+        "url": "https://github.com/mnhkahn/jia/issues"
+    },
+    "homepage": "https://github.com/mnhkahn/jia"
+}
