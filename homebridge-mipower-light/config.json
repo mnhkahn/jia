@@ -11,7 +11,7 @@
     "accessories": [{
         "accessory": "MiLight",
         "name": "MiLight",
-        "ip": "10.0.1.3",
+        "ip": "10.0.1.4",
         "token": "d855f33b358d95808e86563f40839969"
     }]
 }

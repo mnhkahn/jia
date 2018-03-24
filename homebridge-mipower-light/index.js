@@ -26,24 +26,33 @@ function MiAccessory(log, config) {
     this.lightService = new Service.Lightbulb(this.name);
     this.lightService.subtype = this.name;
     this.infoService = new Service.AccessoryInformation();
+
+    var that = this;
+
+    miio.device({ address: this.ip, token: this.token })
+        .then(device => {
+            that.log("discover device", device);
+            that.light = device;
+            that.model = device.model;
+        })
+        .catch(function(err) {
+            log.info("miio error", err);
+        });
 }
 
 MiAccessory.prototype.getServices = function() {
     let services = [];
 
-    this.light = miio.device({ address: this.ip, token: this.token })
-        .then(device => console.log('Connected to', device))
-        .catch(err => handleErrorHere);
 
     this.lightService
         .getCharacteristic(Characteristic.On)
         .on('set', (value, callback) => {
             this.log.error("set light", value);
-            this.light.setPower(value);
-
+            this.light.setPower(!!value);
+            callback(null, !!value);
         })
         .on('get', (callback) => {
-            this.log.error("get light status", this.host, this.port);
+            this.log.error("get light status", this.light, this.ip, this.token);
             this.light.power()
                 .then(function(isOn) {
                     callback(null, isOn);
@@ -57,7 +66,7 @@ MiAccessory.prototype.getServices = function() {
         // 设置制造商
         .setCharacteristic(Characteristic.Manufacturer, "Jia")
         // 设置型号
-        .setCharacteristic(Characteristic.Model, this.host)
+        .setCharacteristic(Characteristic.Model, "Mi-Power-Light")
         // 设置序列号
         .setCharacteristic(Characteristic.SerialNumber, this.lightService.UUID);
 
