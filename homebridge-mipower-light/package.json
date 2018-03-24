@@ -1,5 +1,5 @@
 {
-    "name": "homebridge-pin-light",
+    "name": "homebridge-mipower-light",
     "version": "1.0.0",
     "description": "Homebridge plugin to use Pin as HomeKit accessory. It depends on this repositry https://github.com/mnhkahn/jia.",
     "license": "ISC",
@@ -11,7 +11,7 @@
         "Homebridge",
         "HAP-NodeJs",
         "homebridge-plugin",
-        "pin"
+        "miio"
     ],
     "engines": {
         "node": ">=0.12.0",

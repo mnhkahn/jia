@@ -1,0 +1,17 @@
+{
+    "bridge": {
+        "name": "HomebridgePI",
+        "username": "CD:22:3D:E3:CE:30",
+        "port": 51826,
+        "pin": "031-45-156"
+    },
+
+    "description": "The Onion!",
+
+    "accessories": [{
+        "accessory": "MiLight",
+        "name": "MiLight",
+        "ip": "10.0.1.3",
+        "token": "d855f33b358d95808e86563f40839969"
+    }]
+}

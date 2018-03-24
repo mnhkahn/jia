@@ -81,7 +81,9 @@ PinAccessory.prototype.getServices = function() {
     this.infoService
         // 设置制造商
         .setCharacteristic(Characteristic.Manufacturer, "Jia")
+        // 设置型号
         .setCharacteristic(Characteristic.Model, this.host)
+        // 设置序列号
         .setCharacteristic(Characteristic.SerialNumber, this.lightService.UUID);
 
     return services;
